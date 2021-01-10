@@ -1,12 +1,13 @@
 # Send your Sequelize queries from frontend to the backend 
 
-    On the Backend side, Sequelize allows you to create database query requests from a [specific model]
+On the Backend side, [Sequelize](https://sequelize.org) allows you to create database query requests from a 
+[specific model](https://sequelize.org/master/manual/model-querying-basics.html).
 
-    To send querying from a client like [Angular], a JSON can be sent to the backend
-    and can be converted by the Convert2Sequelize module in order to create the final Sequelize query.
+To send querying from a client like [Angular](https://angular.io/), a JSON can be sent to the backend
+and can be converted by the Convert2Sequelize module in order to create the final Sequelize query.
 
-    Sequelize also offers to perform raw queries using SQL queries .
-    Convert2Sequelize module converts the JSON to generate the SQL query.
+Sequelize also offers to perform raw queries using SQL queries .
+Convert2Sequelize module converts the JSON to generate the SQL query.
 
 # Frontend: Define request from Angular Client or other
 
@@ -99,7 +100,9 @@ How use Convert2Sequelize ?
 
 ## License
 
-  [MIT](LICENSE) 
+[MIT](LICENSE)
+
 [Angular](https://angular.io/)
-[specific model](https://sequelize.org/master/manual/model-querying-basics.html)
+
+[Sequelize](https://sequelize.org/master/manual/model-querying-basics.html)
 
