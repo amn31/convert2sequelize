@@ -121,6 +121,7 @@ console.log('\nTO SEQUELIZE DETAIL:')
 convert.displayRoot(tosequelize)
 console.log('\nSQL:'+convert.convertToSQL(conditions1));
 
+console.log('OPERATORS:',convert.getOperators());
 
 // request = {
 //     limit: 10,

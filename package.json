@@ -2,7 +2,8 @@
   "name": "@amn31/convert2sequelize",
   "version": "1.0.0",
   "description": "Permet la conversion d'une requête SQL vers sequelize pour les methode find({where: xxx}), findAndCountAll(),etc ...",
-  "main": "index.js",
+  "main": "dist/lib/db-convert.js",
+  "types": "dist/lib/db-convert.d.ts",
   "scripts": {
     "check": "ts-node test\\test-convert.ts",
     "build": "tsc",
