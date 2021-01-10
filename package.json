@@ -4,8 +4,33 @@
   "description": "Permet la conversion d'une requête SQL vers sequelize pour les methode find({where: xxx}), findAndCountAll(),etc ...",
   "main": "index.js",
   "scripts": {
+    "check": "ts-node test\\test-convert.ts",
+    "build": "tsc",
+    "node": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Morillon Alain (amn31t@gmail.com)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amn31/convert2sequelize.git"
+  },
+  "keywords": [
+    "convert",
+    "query",
+    "sequelize",
+    "sql"
+  ],
+  "bugs": {
+    "url": "https://github.com/amn31/convert2sequelize/issues"
+  },
+  "homepage": "https://github.com/amn31/convert2sequelize#readme",
+  "dependencies": {
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  }
 }
