@@ -1,0 +1,11 @@
+{
+  "name": "@amn31/convert2sequelize",
+  "version": "1.0.0",
+  "description": "Permet la conversion d'une requête SQL vers sequelize pour les methode find({where: xxx}), findAndCountAll(),etc ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
