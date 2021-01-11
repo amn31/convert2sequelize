@@ -1,6 +1,6 @@
 {
   "name": "@amn31/convert2sequelize",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Send your Sequelize queries from frontend (client side like Angular) to the backend (NodeJS) for methods: find({where: xxx}), findAndCountAll(),etc ...",
   "main": "dist/lib/db-convert.js",
   "types": "dist/lib/db-convert.d.ts",

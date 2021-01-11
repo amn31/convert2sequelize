@@ -37,7 +37,6 @@ Convert2Sequelize module converts the JSON to generate the SQL query.
                 ],
             ]
         ]
-    ]
 ```
 
 # Backend: Installation
@@ -51,7 +50,7 @@ How use Convert2Sequelize ?
 
 ```ts
   
-   import { CompleteConditions , Convert2Sequelize} from "../lib/db-convert";
+   import { CompleteConditions , Convert2Sequelize} from "@amn31/convert2sequelize"
 
     // Create instance
     const convert = new Convert2Sequelize();
@@ -72,7 +71,7 @@ How use Convert2Sequelize ?
     /* Example: 2 */
     // Convert JSON to SQL :
     // ( Imei not like '%33680090%' ) and (  ( EnrollmentStatus = 'Enrolled' ) or ( EnrollmentStatus = 'Unenrolled' )  
-         
+
     // Sequelize can be used for Raw Queries 
     let SQLquery = 'SELECT * From Users WHERE ' + convert.convertToSQL(conditions);
     const { QueryTypes } = require('sequelize');
