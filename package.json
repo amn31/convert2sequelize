@@ -1,7 +1,7 @@
 {
   "name": "@amn31/convert2sequelize",
   "version": "1.0.0",
-  "description": "Permet la conversion d'une requête SQL vers sequelize pour les methode find({where: xxx}), findAndCountAll(),etc ...",
+  "description": "Send your Sequelize queries from frontend (client side like Angular) to the backend (NodeJS) for methods: find({where: xxx}), findAndCountAll(),etc ...",
   "main": "dist/lib/db-convert.js",
   "types": "dist/lib/db-convert.d.ts",
   "scripts": {
@@ -33,5 +33,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }

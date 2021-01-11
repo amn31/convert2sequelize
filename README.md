@@ -1,3 +1,4 @@
+
 # Send your Sequelize queries from frontend to the backend 
 
 On the Backend side, [Sequelize](https://sequelize.org) allows you to create database query requests from a 
@@ -8,6 +9,7 @@ and can be converted by the Convert2Sequelize module in order to create the fina
 
 Sequelize also offers to perform raw queries using SQL queries .
 Convert2Sequelize module converts the JSON to generate the SQL query.
+
 
 # Frontend: Define request from Angular Client or other
 
@@ -38,6 +40,11 @@ Convert2Sequelize module converts the JSON to generate the SQL query.
     ]
 ```
 
+# Backend: Installation
+
+$ npm install @amn31/convert2sequelize
+
+
 # Backend: Convert JSON to Sequelize
 
 How use Convert2Sequelize ?
@@ -46,7 +53,7 @@ How use Convert2Sequelize ?
   
    import { CompleteConditions , Convert2Sequelize} from "../lib/db-convert";
 
-    // Creat converter instance
+    // Create instance
     const convert = new Convert2Sequelize();
 
     /* Example: 1 */
@@ -62,14 +69,15 @@ How use Convert2Sequelize ?
         ]
     });
 
-    /* Example: 2 */        
+    /* Example: 2 */
+    // Convert JSON to SQL :
+    // ( Imei not like '%33680090%' ) and (  ( EnrollmentStatus = 'Enrolled' ) or ( EnrollmentStatus = 'Unenrolled' )  
+         
     // Sequelize can be used for Raw Queries 
     let SQLquery = 'SELECT * From Users WHERE ' + convert.convertToSQL(conditions);
     const { QueryTypes } = require('sequelize');
 
     const users = await sequelize.query(SQLquery, { type: QueryTypes.SELECT });
-
-
 ```
 
 ### Operators 
