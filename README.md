@@ -73,7 +73,7 @@ How use Convert2Sequelize ?
     // ( Imei not like '%33680090%' ) and (  ( EnrollmentStatus = 'Enrolled' ) or ( EnrollmentStatus = 'Unenrolled' )  
 
     // Sequelize can be used for Raw Queries 
-    let SQLquery = 'SELECT * From Users WHERE ' + convert.convertToSQL(conditions);
+    let SQLquery = 'SELECT * From Users WHERE ' + convert.convertToSQL(whereJSON);
     const { QueryTypes } = require('sequelize');
 
     const users = await sequelize.query(SQLquery, { type: QueryTypes.SELECT });
