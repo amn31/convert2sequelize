@@ -1,11 +1,12 @@
 import { Sequelize } from 'sequelize';
-import { CompleteConditions , Convert2Sequelize} from "../lib/db-convert";
+import { CompleteConditions, Convert2Sequelize, MaData } from "../lib/db-convert";
+import { DATA } from './data';
 
-let conditions1 : CompleteConditions = [
+let conditions1: CompleteConditions = [
     [
         "Imei",
-        "not like",
-        "%13%"
+        "contains",
+        "13"
     ],
     "and",
     [
@@ -109,6 +110,7 @@ let conditions1 : CompleteConditions = [
 
 //const dbConvert = require('../lib/db-convert');
 const convert = new Convert2Sequelize();
+
 var request = {
     where: convert.convertToSequelize(conditions1),
     attributes: [
@@ -116,12 +118,13 @@ var request = {
     ]
 }
 var tosequelize = convert.convertToSequelize(conditions1);
-console.log('TO SEQUELIZE:',tosequelize);
+console.log('TO SEQUELIZE:', tosequelize);
 console.log('\nTO SEQUELIZE DETAIL:')
 convert.displayRoot(tosequelize)
-console.log('\nSQL:'+convert.convertToSQL(conditions1));
+console.log('\nSQL:' + convert.convertToSQL(conditions1));
 
-console.log('OPERATORS:',convert.getOperators());
+console.log('OPERATORS:', convert.getOperators());
+
 
 // request = {
 //     limit: 10,
@@ -129,5 +132,93 @@ console.log('OPERATORS:',convert.getOperators());
 //     offset: 0,
 // }
 
+console.log(DATA[0]);
 
+let conditions = [
+    [
+        "id",
+        ">",
+        "13"
+    ],
+    "and",
+    [
+        [
+            "isLeasing",
+            "=",
+            "1"
+        ],
+        "or",
+        [
+            [
+                "isLeasing",
+                "isnull",
+                "1"
+            ],
+            "and",
+            [
+                "id",
+                "=",
+                "20"
+            ],
+        ],
+        "or",
+        [
+            [
+                "isLeasing",
+                "=",
+                "0"
+            ],
+        ],
+        "or",
+        [
+            [
+                "id",
+                ">=",
+                "25"
+            ],
+            "and", [
+                [
+                    "EnrollmentStatus",
+                    "=",
+                    "Enrolled"
+                ],
+                "and",
+                [
+                    "Imei",
+                    "=",
+                    "013409000525251"
+                ],
+                "and",
+                [
+                    [
+                        "EnrollmentStatus",
+                        "=",
+                        "Enrolled"
+                    ],
+                    "and",
+                    [
+                        "Imei",
+                        "like",
+                        "%1340%"
+                    ]
+                ]
+            ]
+        ],
+
+
+    ],
+    "and",
+    [
+        "id",
+        "<",
+        "27"
+    ],
+
+];
+
+var r = MaData.FilterByConditions(conditions, DATA);
+if (r.length != 5) {
+    console.log("RESULT: " + r.length, r);
+    throw("Unexpected result!")
+}
 

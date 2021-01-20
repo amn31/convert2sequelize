@@ -84,20 +84,20 @@ How use Convert2Sequelize ?
 ```sql
     and
     or
-    '='
-    '!='
-    '>'
-    '<'
-    '>='
-    '<='
+    =
+    !=
+    >
+    <
+    >=
+    <=
     like
-    'not like'
+    not like
     ilike
-    'not ilike'
+    not ilike
     regex
     notRegexp
     iregex
-    'not iregex'
+    not iregex
     startswith
     endswith
     contains
